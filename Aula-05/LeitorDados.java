@@ -1,0 +1,36 @@
+// Arquivo: LeitorDados.java
+import java.util.Scanner;   // OBRIGATORIO: importa a classe Scanner
+
+void main() {
+
+    // Cria o Scanner ligado ao teclado (System.in)
+    var sc = new Scanner(System.in);
+
+    // Lendo texto
+    IO.println("Qual o seu nome?");
+    var nome = sc.nextLine();    // lê a linha inteira
+
+    // Lendo inteiro
+    IO.println("Qual a sua idade?");
+    var idade = sc.nextInt();    // lê apenas o numero
+
+    // Lendo decimal
+    IO.println("Qual a sua nota final?");
+    var nota = sc.nextDouble();  // lê numero com casas decimais
+
+    // sc.nextLine() apos nextInt/nextDouble: limpa o buffer
+    // (explicado abaixo)
+    sc.nextLine();
+
+    // Exibindo os dados lidos
+    System.out.format("%n=== Dados do Aluno ===%n");
+    System.out.format("Nome:  %s%n", nome);
+    System.out.format("Idade: %d anos%n", idade);
+    System.out.format("Nota:  %.2f%n", nota);
+
+    var situacao = nota >= 7.0 ? "Aprovado" : "Reprovado";
+    System.out.format("Situacao: %s%n", situacao);
+
+    // Boa pratica: fechar o Scanner ao terminar
+    sc.close();
+}
