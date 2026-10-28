@@ -1,5 +1,4 @@
 void main() {
-
     // BASICO: substituir valores em uma string formatada
     String nome  = "Maria";
     int    idade = 20;
